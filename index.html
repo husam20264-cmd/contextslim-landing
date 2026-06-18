@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContextSlim v0.1 Early Access</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #0b1020;
+      color: #eef2ff;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 56px 20px;
+    }
+    .hero {
+      text-align: center;
+      padding: 64px 0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #3b82f6;
+      border-radius: 999px;
+      color: #93c5fd;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 52px;
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+    h2 {
+      margin-top: 56px;
+      font-size: 30px;
+    }
+    p, li {
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 22px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+    code, pre {
+      background: #111827;
+      color: #a7f3d0;
+      border-radius: 10px;
+    }
+    pre {
+      padding: 16px;
+      overflow-x: auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .price {
+      font-size: 44px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .note {
+      color: #94a3b8;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">v0.1 Early Access</div>
+      <h1>Don’t send more context.<br />Send smarter context.</h1>
+      <p>ContextSlim is a local CLI that builds task-specific context packs for AI coding tools.</p>
+      <a class="cta" href="mailto:husammaghaireh93@gmail.com?subject=ContextSlim%20Early%20Access">Get ContextSlim — $9</a>
+    </section>
+
+    <section>
+      <h2>The Problem</h2>
+      <div class="card">
+        <p>AI coding tools often receive too much noisy context: irrelevant files, long chat history, duplicated code, and missing task-specific snippets.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Solution</h2>
+      <p>ContextSlim scans your repo and builds a focused context pack for the current task.</p>
+      <pre><code>contextslim build ./repo --task "fix login bug"</code></pre>
+      <p>It generates:</p>
+      <pre><code>.contextslim/project_map.json
+
+.contextslim/final_context.md
+.contextslim/token_report.md</code></pre>
+    </section>
+
+    <section>
+      <h2>Demo Result</h2>
+      <div class="card">
+        <p>In a login bug test, ContextSlim selected:</p>
+        <ul>
+          <li><code>app.py</code> — route logic</li>
+          <li><code>test_app.py</code> — tests</li>
+          <li><code>templates/login.html</code> — login template</li>
+        </ul>
+        <p><strong>Original estimated tokens:</strong> 2,543</p>
+        <p><strong>Selected context:</strong> 590</p>
+        <p><strong>Estimated reduction:</strong> 76.8%</p>
+        <p class="note">This is one demo result. Actual results vary by repo, task, model, pricing, and workflow.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What You Get</h2>
+      <div class="grid">
+        <div class="card">Repo indexing</div>
+        <div class="card">Task-based file selection</div>
+        <div class="card">Function-aware scoring</div>
+        <div class="card">Keyword expansion</div>
+        <div class="card">Real code snippet extraction</div>
+        <div class="card">final_context.md + token_report.md</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Early Access</h2>
+      <div class="card">
+        <div class="price">$9</div>
+        <p>Payment is manual for the first users.</p>
+        <p>Send me a DM or email with <strong>ContextSlim</strong>, and I’ll send payment details + the ZIP after payment.</p>
+        <a class="cta" href="mailto:husammaghaireh93@gmail.com?subject=ContextSlim%20Early%20Access">Get ContextSlim v0.1</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <div class="card">
+        <p><strong>Is this a SaaS?</strong><br />No. ContextSlim is a local CLI.</p>
+        <p><strong>Does it send my code to a server?</strong><br />No. v0.1 is local-first.</p>
+        <p><strong>Does it guarantee fixed savings?</strong><br />No. It helps you measure your own repo and workflow.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
