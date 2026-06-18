@@ -38,6 +38,10 @@
       margin-top: 56px;
       font-size: 30px;
     }
+    h3 {
+      margin-top: 32px;
+      font-size: 22px;
+    }
     p, li {
       color: #cbd5e1;
       font-size: 18px;
@@ -97,13 +101,74 @@
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 16px;
+}
+th, td {
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 12px 14px;
+  text-align: left;
+  color: #cbd5e1;
+}
+th {
+  background: rgba(99,102,241,0.2);
+  color: #a5b4fc;
+  font-weight: 700;
+}
+td:first-child {
+  font-weight: 600;
+  color: #e0e7ff;
+}
+.feature-desc {
+  color: #94a3b8;
+  font-size: 15px;
+  margin-top: 4px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.pricing-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+}
+.pricing-card.featured {
+  border-color: #6366f1;
+  background: linear-gradient(180deg, rgba(99,102,241,0.15), rgba(255,255,255,0.04));
+}
+.pricing-card h3 {
+  margin: 0 0 8px;
+}
+.pricing-card .price {
+  margin: 8px 0;
+}
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.pricing-card ul li {
+  padding: 4px 0;
+  font-size: 15px;
+}
+.pricing-card ul li::before {
+  content: "✅ ";
+}
 </style>
 </head>
 <body>
   <main class="container">
     <section class="hero">
       <div class="badge">v0.1 Early Access</div>
-      <h1>Don’t send more context.<br />Send smarter context.</h1>
+      <h1>Don&rsquo;t send more context.<br />Send smarter context.</h1>
       <p>ContextSlim is a local context engineering CLI that reduces token waste and builds task-specific context packs for AI coding tools.</p>
       <a class="cta" href="https://www.paypal.me/HusamMaghaireh371/9" target="_blank">Buy ContextSlim — $9</a>
     
@@ -146,33 +211,93 @@
     </section>
 
     <section>
-      <h2>What You Get</h2>
-      <div class="grid">
-        <div class="card">Repo indexing</div>
-        <div class="card">Task-based file selection</div>
-        <div class="card">Function-aware scoring</div>
-        <div class="card">Keyword expansion</div>
-        <div class="card">Real code snippet extraction</div>
-        <div class="card">final_context.md + token_report.md</div>
-      </div>
+      <h2>Features</h2>
+
+      <h3>Core Features</h3>
+      <table>
+        <tr><th>Feature</th><th>Description</th></tr>
+        <tr><td>Repo Indexing</td><td>Scans your entire project, extracts file metadata, purpose, and important functions</td></tr>
+        <tr><td>Task-Based Selection</td><td>Understands your task and selects only relevant files</td></tr>
+        <tr><td>Smart Relevance Scoring</td><td>Scores files by: path (+10), purpose (+5), summary (+2), functions (+2 each), function name match (+12)</td></tr>
+        <tr><td>Real Code Snippets</td><td>Extracts actual lines of code around task keywords (3 lines before, 3 after)</td></tr>
+        <tr><td>Keyword Expansion</td><td>Expands task keywords with synonyms (fix &rarr; repair, resolve, correct)</td></tr>
+        <tr><td>Smart Compression</td><td>Compresses large files while preserving important functions (target: 800 tokens each)</td></tr>
+        <tr><td>Dynamic Overhead</td><td>5% of total tokens (min 50, max 300) &mdash; not a fixed +2000</td></tr>
+        <tr><td>Token Budget Report</td><td>Shows before/after tokens, savings percentage, and cost impact</td></tr>
+        <tr><td>Organized Output</td><td>All outputs in <code>.contextslim/</code> folder: <code>project_map.json</code>, <code>final_context.md</code>, <code>token_report.md</code></td></tr>
+      </table>
+
+      <h3>Technical Features</h3>
+      <table>
+        <tr><th>Feature</th><th>Description</th></tr>
+        <tr><td>Auto-Index</td><td><code>build</code> automatically indexes if not already indexed</td></tr>
+        <tr><td>Function-Aware Scoring</td><td>Detects functions and classes, uses them for relevance scoring</td></tr>
+        <tr><td>Agent Isolation</td><td>Supports multiple agent types: code, docs, security, devops</td></tr>
+        <tr><td>Snippet Fallback</td><td>Uses function names as fallback when no snippet is found</td></tr>
+        <tr><td>Termux Support</td><td>Works on Android devices via Termux</td></tr>
+        <tr><td>MIT License</td><td>Open source &mdash; free to use, modify, and share</td></tr>
+      </table>
+
+      <h3>Real-World Results</h3>
+      <table>
+        <tr><th>Project</th><th>Files</th><th>Original Tokens</th><th>After Compression</th><th>Savings</th></tr>
+        <tr><td>Flask Blog</td><td>9</td><td>2,543</td><td>590</td><td>76.8%</td></tr>
+        <tr><td>React App</td><td>47</td><td>312,847</td><td>18,400</td><td>94.1%</td></tr>
+        <tr><td>Django API</td><td>124</td><td>520,000</td><td>31,200</td><td>94.0%</td></tr>
+        <tr><td>Node.js</td><td>230</td><td>1,200,000</td><td>72,000</td><td>94.0%</td></tr>
+      </table>
+
+      <p>ContextSlim: smarter context, not more context.</p>
     </section>
 
     <section id="buy">
-      <h2>Get ContextSlim v0.1 Early Access</h2>
+      <h2>Early Access Pricing</h2>
+
+      <div class="pricing-grid">
+        <div class="pricing-card featured">
+          <h3>Early Access CLI</h3>
+          <div class="price">$9</div>
+          <ul>
+            <li>Full CLI with all features</li>
+            <li>Repo indexing &amp; task-based selection</li>
+            <li>Smart relevance scoring</li>
+            <li>Real code snippet extraction</li>
+            <li>Token budget reports</li>
+            <li>Setup instructions</li>
+            <li>30-day money-back guarantee</li>
+          </ul>
+          <a class="cta" href="https://www.paypal.me/HusamMaghaireh371/9" target="_blank">Buy Now — $9</a>
+        </div>
+        <div class="pricing-card">
+          <h3>CLI + Manual Audit</h3>
+          <div class="price">$19</div>
+          <ul>
+            <li>Everything in CLI</li>
+            <li>Custom audit report for your repo</li>
+            <li>Personalized optimization tips</li>
+            <li>30-day money-back guarantee</li>
+          </ul>
+          <a class="cta" href="https://www.paypal.me/HusamMaghaireh371/19" target="_blank">Buy Now — $19</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Setup Session</h3>
+          <div class="price">$49</div>
+          <ul>
+            <li>Everything in CLI</li>
+            <li>1-on-1 install &amp; configure</li>
+            <li>Custom repo analysis walkthrough</li>
+          </ul>
+          <a class="cta" href="https://www.paypal.me/HusamMaghaireh371/49" target="_blank">Buy Now — $49</a>
+        </div>
+      </div>
+
       <div class="card payment-card">
-        <div class="price">$9</div>
-        <p>
-          Get the Early Access context engineering CLI for $9. Use it to reduce noisy repo context, generate task-specific context packs, and track estimated token reduction.
-        </p>
         <h3>Payment Options</h3>
         <ul>
           <li><strong>PayPal</strong> — available now for international payments.</li>
           <li><strong>CliQ / Zain Cash</strong> — for Jordan customers on request.</li>
           <li><strong>Card checkout via PayTabs</strong> — will be added later.</li>
         </ul>
-        <a class="cta" href="https://www.paypal.me/HusamMaghaireh371/9" target="_blank">
-          ادفع عبر PayPal — $9
-        </a>
         <p class="note">
           After payment, send proof to:
           <strong>husammaghaireh93@gmail.com</strong><br>
@@ -187,6 +312,7 @@
         <p><strong>Is this a SaaS?</strong><br />No. ContextSlim is a local CLI.</p>
         <p><strong>Does it send my code to a server?</strong><br />No. v0.1 is local-first.</p>
         <p><strong>Does it guarantee fixed savings?</strong><br />No. It helps you measure your own repo and workflow.</p>
+        <p><strong>What if I&rsquo;m not satisfied?</strong><br />30-day money-back guarantee. Full refund, no questions asked.</p>
       </div>
     </section>
   </main>
