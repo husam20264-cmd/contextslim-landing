@@ -82,6 +82,15 @@
       font-weight: 800;
       color: #ffffff;
     }
+.secondary {
+  background: transparent;
+  border: 1px solid #6366f1;
+  margin-left: 12px;
+}
+.secondary:hover {
+  background: rgba(99,102,241,0.15);
+}
+
 .note {
   color: #94a3b8;
   font-size: 15px;
@@ -171,6 +180,7 @@ td:first-child {
       <h1>Don&rsquo;t send more context.<br />Send smarter context.</h1>
       <p>ContextSlim is a local context engineering CLI that reduces token waste and builds task-specific context packs for AI coding tools.</p>
       <a class="cta" href="https://www.paypal.me/HusamMaghaireh371/9" target="_blank">Buy ContextSlim — $9</a>
+      <a class="cta secondary" href="benchmarks/flask-token-report.txt">View Free Sample Report</a>
     
 <img src="assets/contextslim-hero.png" alt="ContextSlim AI context pack illustration" class="hero-image">
 
@@ -242,7 +252,7 @@ td:first-child {
       <table>
         <tr><th>Project</th><th>Files</th><th>Original Tokens</th><th>Selected Context</th><th>Estimated Reduction</th></tr>
         <tr>
-          <td><a href="benchmarks/flask-token-report.md">Flask Project</a></td>
+          <td><a href="benchmarks/flask-token-report.txt">Flask Project</a></td>
           <td>229</td>
           <td>449,310</td>
           <td>4,517</td>
@@ -252,7 +262,12 @@ td:first-child {
       <p class="note">
         Verified from ContextSlim <code>token_report.md</code>.
         Token counts are estimates. Results vary by repo, task, model, and workflow.
-        <a href="benchmarks/flask-token-report.md">View full report</a>.
+        <a href="benchmarks/flask-token-report.txt">View full report</a>.
+      </p>
+
+      <p class="note">
+        Want to see what ContextSlim generates before buying?
+        View the free <a href="benchmarks/flask-token-report.txt">Flask token report sample</a>.
       </p>
 
       <p>ContextSlim: smarter context, not more context.</p>
