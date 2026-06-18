@@ -238,14 +238,22 @@ td:first-child {
         <tr><td>MIT License</td><td>Open source &mdash; free to use, modify, and share</td></tr>
       </table>
 
-      <h3>Real-World Results</h3>
+      <h3>Verified Local Tests</h3>
       <table>
-        <tr><th>Project</th><th>Files</th><th>Original Tokens</th><th>After Compression</th><th>Savings</th></tr>
-        <tr><td>Flask Blog</td><td>9</td><td>2,543</td><td>590</td><td>76.8%</td></tr>
-        <tr><td>React App</td><td>47</td><td>312,847</td><td>18,400</td><td>94.1%</td></tr>
-        <tr><td>Django API</td><td>124</td><td>520,000</td><td>31,200</td><td>94.0%</td></tr>
-        <tr><td>Node.js</td><td>230</td><td>1,200,000</td><td>72,000</td><td>94.0%</td></tr>
+        <tr><th>Project</th><th>Files</th><th>Original Tokens</th><th>Selected Context</th><th>Estimated Reduction</th></tr>
+        <tr>
+          <td><a href="benchmarks/flask-token-report.md">Flask Project</a></td>
+          <td>229</td>
+          <td>449,310</td>
+          <td>4,517</td>
+          <td>~99%</td>
+        </tr>
       </table>
+      <p class="note">
+        Verified from ContextSlim <code>token_report.md</code>.
+        Token counts are estimates. Results vary by repo, task, model, and workflow.
+        <a href="benchmarks/flask-token-report.md">View full report</a>.
+      </p>
 
       <p>ContextSlim: smarter context, not more context.</p>
     </section>
